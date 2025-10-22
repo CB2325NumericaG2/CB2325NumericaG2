@@ -11,7 +11,7 @@ Essa biblioteca foi criada com o intuíto para o trabalho de Programação 3 do 
 - [] Raízes de funções
 - [] Interpolações
 - [] Docstrings
-- [] Testes unitários
+- [] Testes unitáriosgt
 - [] Instalação via pacote pip
 
 ## Colaboradores

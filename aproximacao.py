@@ -44,9 +44,9 @@ def minimos_quadrados(vetor_x : list,vetor_y : list) -> tuple:
         #calculo de b
         b = (somatorio_yi - a*somatorio_xi)/n
 
-        return 1, a, b
+        return a, b, 1
     else: # Todos os x são iguais => Reta vertical 
-        return 0, 1, vetor_x[0]
+        return 1, vetor_x[0], 0
 
 def theil_sen(x: list, y: list) -> tuple:
     """
@@ -65,7 +65,7 @@ def theil_sen(x: list, y: list) -> tuple:
     # Caso vertical: todos os x iguais
     if np.ptp(x) == 0.0:  # ptp = max(x) - min(x)
         x0 = float(np.median(x))
-        return 0, x0, x[0]
+        return x0, x[0], 0
 
     # Caso geral: ignora pares com dx == 0
     slopes = []
@@ -78,7 +78,7 @@ def theil_sen(x: list, y: list) -> tuple:
 
     b = float(np.median(slopes))       # inclinação = mediana das inclinações
     a = float(np.median(y - b * x))    # intercepto = mediana dos resíduos
-    return 1, a, b
+    return a, b, 1
 
 def plot_linear_minimos_quadrados(x, y):
     """
@@ -96,7 +96,7 @@ def plot_linear_minimos_quadrados(x, y):
     Returns:
         None
     """
-    c, a, b = minimos_quadrados(x, y)
+    a, b, c = minimos_quadrados(x, y)
 
     plt.scatter(x, y, color='royalblue', label='Pontos reais')
 
@@ -134,7 +134,7 @@ def plot_linear_theil_sen(x, y):
         x (list[float] | np.ndarray): abscissas
         y (list[float] | np.ndarray): ordenadas
     """
-    flag, a, b = theil_sen(x, y)
+    a, b, flag = theil_sen(x, y)
 
     # pontos
     plt.scatter(x, y, color='royalblue', label='Pontos reais')
@@ -160,6 +160,49 @@ def plot_linear_theil_sen(x, y):
     plt.grid(True)
     plt.show()
 
+def ajuste_polinomial_min_quadrados(x: list[float], y: list[float], grau: int, cond_thresh=1e12):
+    x = np.asarray(x, dtype=float)
+    y = np.asarray(y, dtype=float)
+
+    # Vamos criar uma matriz (n x m)
+    # n é o grau do polinômio 
+    # m é o número de coordenadas que o usuário utilizar
+
+    m = len(x)
+    
+    if m != len(y): 
+        # O usuário errou ao enviar dados para a função.
+        raise ValueError(f"len(x)={m} diferente de len(y)={len(y)}")
+    
+    # Teste direto de reta vertical
+    if np.allclose(x, x[0]):
+        # Todos os valores de x são iguais → reta vertical
+        return np.array([x[0], True], dtype=object)
+    
+    # Reduz o grau se houver menos pontos que coeficientes
+    if m < grau + 1:
+        return ajuste_polinomial_min_quadrados(x, y, m - 1, cond_thresh)
+    
+    # Matriz de Vandermonde
+    X = np.vander(x, grau + 1, increasing=True)
+    
+    # Número máximo de colunas linearmente independentes
+    sigma = np.linalg.svd(X, compute_uv=False)
+    # Tolerância baseada no condicionamento numérico
+    _tol = sigma[0] / cond_thresh
+    rank = np.linalg.matrix_rank(X, tol=_tol)
+    
+    # Ajusta o grau com base no posto da matriz
+    if rank < X.shape[1]:
+        X = np.vander(x, rank, increasing=True)
+    
+    # Lista dos coeficientes do polinômio via mínimos quadrados diretos
+    a = np.linalg.inv(X.T @ X) @ X.T @ y
+
+    # O último valor do array indica se a função é uma reta vertical
+    a = np.append(a, False)
+
+    return a
 
 
 if __name__ =="__main__":

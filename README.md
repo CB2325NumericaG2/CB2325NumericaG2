@@ -2,7 +2,7 @@
 
 ## Para que serve?
 
-Essa biblioteca foi criada para o trabalho de Programação 2 do périodo 1.2 do IMPA Tech.
+Essa biblioteca foi criada para o trabalho de Programação 2 do período 1.2 do IMPA Tech.
 
 ## ⚙️ Funcionalidades
 - [] Erros númericos

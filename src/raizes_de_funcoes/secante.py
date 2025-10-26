@@ -1,4 +1,6 @@
-def secante(f, x0, x1, tol=1e-6, max_iter=100):
+from typing import Callable
+
+def secante(f: Callable[[float], float], x0: float, x1: float, tol=1e-6, max_iter=100) -> float:
     """
     Encontra uma raiz da função f usando o método da secante.
 

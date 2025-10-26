@@ -34,6 +34,7 @@ def secante(f, x0, x1, tol=1e-6, max_iter=100):
         x0, x1 = x1, x2
     raise ValueError("Número máximo de iterações atingido")
 
-f = lambda x: x**2 - 2
-raiz = secante(f, 1, 2)
-print(raiz)
+if __name__ == "__main__":
+    f = lambda x: x**2 - 2
+    raiz = secante(f, 1, 2)
+    print(raiz)

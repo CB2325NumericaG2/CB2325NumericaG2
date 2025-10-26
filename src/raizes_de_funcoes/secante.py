@@ -1,6 +1,8 @@
-from typing import Callable
+from typing import Callable, TypeAlias
 
-def secante(f: Callable[[float], float], x0: float, x1: float, tol=1e-6, max_iter=100) -> float:
+FuncaoReal: TypeAlias = Callable[[float], float]
+
+def secante(f: FuncaoReal, x0: float, x1: float, tol=1e-6, max_iter=100) -> float:
     """
     Encontra uma raiz da função f usando o método da secante.
 

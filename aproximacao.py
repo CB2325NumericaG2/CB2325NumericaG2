@@ -186,7 +186,7 @@ def ajuste_polinomial_min_quadrados(x: list[float], y: list[float], grau: int, c
     # Matriz de Vandermonde
     X = np.vander(x, grau + 1, increasing=True)
     
-    # Número máximo de colunas linearmente independentes
+    # Número máximo de colunas linearmente independentes (rank)
     sigma = np.linalg.svd(X, compute_uv=False)
     # Tolerância baseada no condicionamento numérico
     _tol = sigma[0] / cond_thresh

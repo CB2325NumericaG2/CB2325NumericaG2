@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CB2325NumericaG2"
+version = "0.1"
+dependencies = [
+  "numpy",
+  "sympy",
+]
+requires-python=">=3.10"
+authors = [
+  {name = "Huann Vicente", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Gabriele Ogido", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Italo Rennan", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Gabrielle", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Alan dos Santos", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Lucas Silva", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Samuel Bezerra", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Kauã Reichert", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Daniela ", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Carlos Paulo", email = "al.huann.silva@impatech.edu.br"},
+  {name= "Júlia Quiuqui", email = "al.huann.silva@impatech.edu.br"}
+]
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.urls]
+Github = "https://github.com/CB2325NumericaG2/CB2325NumericaG2.git"
+
+[project.optional-dependencies]
+test = [
+  "pytest"
+]

@@ -23,8 +23,14 @@ def integral(func:Callable[[float],float], pi:float, pf:float, n:int, plot:bool=
         TypeError: Se um dos seguintes casos ocorrer:
             - func não for uma função chamável 
             - pi e pf não forem float 
-            - n não for inteiro
+            - n não for inteiro           
     """
+    if not callable(func):
+        raise TypeError("'func' deve ser uma função chamável")
+    if not isinstance(pi, (int, float)) or not isinstance(pf, (int, float)):
+        raise TypeError("'pi' e 'pf' devem ser números (int ou float)")
+    if not isinstance(n, int):
+        raise TypeError("'n' deve ser um inteiro")
     h = (pf - pi) / n
     pontos = [pi + h*i for i in range(n+1)]
     
@@ -53,11 +59,10 @@ def integral(func:Callable[[float],float], pi:float, pf:float, n:int, plot:bool=
         plt.legend()
         plt.grid(True)
         plt.show()
-
     return area
 
-
-# Teste
-f = lambda x: np.sin(x)**2
-resultado = integral(f, -10, 10, 50, plot=True)
-print(f"Integral aproximada = {resultado}")
+# Teste unitário
+if __name__ == "__main__":
+    f = lambda x: np.sin(x)**2
+    resultado = integral(f, -10, 10, 50, plot=True)
+    print(f"Integral aproximada = {resultado}")

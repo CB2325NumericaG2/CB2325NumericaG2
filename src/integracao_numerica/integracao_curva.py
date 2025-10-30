@@ -51,11 +51,11 @@ def riemann_integ_trapezio(f_string, a, b, n):
     ax.set_ylabel("f(x)")
     ax.legend()
     ax.grid(False)
-    ax.set_xlim([a, b])
     
     # Definindo os limites do gráfico
     min_y = min(0, np.min(y_curve)) 
     max_y = np.max(y_curve)
+    ax.set_xlim([a, b])
     ax.set_ylim([min_y - max_y*0.05, max_y * 1.1])
     
     plt.show()

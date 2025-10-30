@@ -3,7 +3,7 @@ import numpy as np
 from functools import reduce
 from typing import Callable
 
-def integral(func:Callable[[float],float], pi:float, pf:float, n:int, plot:bool=False) -> float:
+def integral_trapézio(func:Callable[[float],float], pi:float, pf:float, n:int, plot:bool=False) -> float:
     """
     Aplica o método da Regra do Trapézio Composta para encontrar uma aproximação da integral de f(x) 
     no intervalo [pi, pf]. Para isso, o intervalo é dividido em n subintervalos de tamanho igual e em cada 
@@ -53,7 +53,7 @@ def integral(func:Callable[[float],float], pi:float, pf:float, n:int, plot:bool=
             y_trap = [0, func(pontos[i]), func(pontos[i+1]), 0]
             plt.fill(x_trap, y_trap, 'orange', alpha=0.3, edgecolor='r')
 
-        plt.title(f"Regra do Trapézio Composta com n={n}")
+        plt.title(f"Método dos Trapézios (n={n}) | Área Aprox. = {area:.2f}")
         plt.xlabel("x")
         plt.ylabel("f(x)")
         plt.legend()
@@ -64,5 +64,5 @@ def integral(func:Callable[[float],float], pi:float, pf:float, n:int, plot:bool=
 # Teste unitário
 if __name__ == "__main__":
     f = lambda x: np.sin(x)**2
-    resultado = integral(f, -10, 10, 50, plot=True)
+    resultado = integral_trapézio(f, -10, 10, 50, plot=True)
     print(f"Integral aproximada = {resultado}")

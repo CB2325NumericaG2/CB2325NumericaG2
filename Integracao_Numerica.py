@@ -4,6 +4,27 @@ from functools import reduce
 from typing import Callable
 
 def integral(func:Callable[[float],float], pi:float, pf:float, n:int, plot:bool=False) -> float:
+    """
+    Aplica o método da Regra do Trapézio Composta para encontrar uma aproximação da integral de f(x) 
+    no intervalo [pi, pf]. Para isso, o intervalo é dividido em n subintervalos de tamanho igual e em cada 
+    deles é construído um trapézio que aproximará a área sob o gráfico de f(x) naquela parte.
+
+    Args:
+        func (Callable[[float], float]): Função f(x).
+        pi (float): Limite inferior do intervalo.
+        pf (float): Limite superior do intervalo.
+        n (int): Número de subdivisões trapezoidais.
+        plot (float, opcional): Visualização do gráfico de f(x) com n subdivisões trapezoidais e a área sombreada.
+
+    Returns:
+        float: Aproximação da integral de f(x) = 0.
+
+    Raises:
+        TypeError: Se um dos seguintes casos ocorrer:
+            - func não for uma função chamável 
+            - pi e pf não forem float 
+            - n não for inteiro
+    """
     h = (pf - pi) / n
     pontos = [pi + h*i for i in range(n+1)]
     

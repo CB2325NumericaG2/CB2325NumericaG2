@@ -2,6 +2,7 @@
 
 O `CB2325NumericaG2` foi criada com o intuíto para o trabalho de Programação 3 do périodo 1.2 do IMPA Tech. O objetivo do trabalho era criar uma biblioteca numérica que contém 5 módulos que são: integração, raizes de funções, aproximações e erros
 
+<<<<<<< HEAD
 Um simples exemplo de uso:
 ```python
 from CB2325NumericaG2 import Interpolacao
@@ -52,4 +53,17 @@ Para executar todos os testes unitários dos módulos utilize no terminal no dir
 
 
 ## Métodos
+=======
+Essa biblioteca foi criada para o trabalho de Programação 2 do período 1.2 do IMPA Tech.
+
+## ⚙️ Funcionalidades
+- [] Erros númericos
+- [] Integração Numérica
+- [] Funções Aproximadoras
+- [] Raízes de funções
+- [] Interpolações
+- [] Docstrings
+- [] Testes unitáriosgt
+- [] Instalação via pacote pip
+>>>>>>> 71c374b5a28ba683825bb3e31a4292ccb1e1fae6
 

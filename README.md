@@ -1,5 +1,3 @@
-# 🧮 Biblioteca Númerica Python 3.10
-
 ![Banner da biblioteca](./Banner.jpg)
 
 O `CB2325NumericaG2` foi criada com o intuíto para o trabalho de Programação 3 do périodo 1.2 do IMPA Tech. O objetivo do trabalho era criar uma biblioteca numérica que contém 5 módulos que são: integração, raizes de funções, aproximações e erros

@@ -1,17 +1,57 @@
-# Biblioteca Númerica Python 3.10
+# 🧮 Biblioteca Númerica Python 3.10
 
-## Para que serve?
+![Banner da biblioteca](./Banner.jpg)
 
-Essa biblioteca foi criada com o intuíto para o trabalho de Programação 3 do périodo 1.2 do IMPA Tech.
+O `CB2325NumericaG2` foi criada com o intuíto para o trabalho de Programação 3 do périodo 1.2 do IMPA Tech. O objetivo do trabalho era criar uma biblioteca numérica que contém 5 módulos que são: integração, raizes de funções, aproximações e erros
+
+Um simples exemplo de uso:
+```python
+from CB2325NumericaG2 import Interpolacao
+
+interpolated = Interpolacao.linear(10, 20, 0.5)
+
+print(interpolated) # 15
+```
+## Colaboradores
+
+## Instalação
+
+```cmd
+$ pip install CB2325NumericaG2
+```
+
+```python
+  import CB2325NumericaG2 as cb  
+```
+
+## Pacotes
+* [pytest](https://github.com/pytest-dev/pytest)  
+* [numpy]()
+* [sympy]()
+* [matplotlib]()
+* [plotly]()
 
 ## ⚙️ Funcionalidades
-- [] Erros númericos
-- [] Integração Numérica
-- [] Funções Aproximadoras
-- [] Raízes de funções
-- [] Interpolações
-- [] Docstrings
-- [] Testes unitários
-- [] Instalação via pacote pip
+- [x] Erros
+- [x] Erros númericos
+- [x] Integração Numérica
+- [x] Funções Aproximadoras
+- [x] Raízes de funções
+- [x] Interpolações
+- [x] Docstrings
+- [x] Testes unitários
+- [x] Instalação via pacote pip
 
-## Colaboradores
+
+## 🧪 Testes unitários
+Para executar todos os testes unitários dos módulos utilize no terminal no diretório 
+`
+  pytest
+`
+
+> ATENÇÃO: cAso não tenha instalado o projeto antes, por favor instale as dependências do projeto. com `pip install -r requirements.txt`
+
+
+
+## Métodos
+

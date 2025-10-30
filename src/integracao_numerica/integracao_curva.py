@@ -2,7 +2,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sympy
 
-def riemann_integ_trapezio(f_string, a, b, n, ponto_corte):
+def riemann_integ_trapezio(f_string: str, a: float, b: float, n: int, ponto_corte: float) -> None:
+
+    '''
+    Entradas:
+    f_string - expressão algébrica
+    a - ponto inicial do intervalo
+    b - ponto final do intervalo
+    n - numero de subintervalos da partição
+    ponto_corte - parametro de altura do subintervalo
+
+    Saída: Gráfico de f com os retângulos da soma de Riemann
+    '''
 
     # Definição de x para computação simbólica
     x_simbolico = sympy.symbols('x') 

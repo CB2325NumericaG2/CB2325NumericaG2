@@ -36,7 +36,7 @@ def riemann_integ_trapezio(f_string, a, b, n, ponto_corte):
         area += area_retangulo
         
         # Preenchendo os trapézios 
-        ax.bar(x_inicio, y_inicio, width = variacao, align = 'edge', \
+        ax.bar(x_inicio, y_altura, width = variacao, align = 'edge', \
                 color = 'gray', edgecolor = 'black', alpha = 0.5)
 
 

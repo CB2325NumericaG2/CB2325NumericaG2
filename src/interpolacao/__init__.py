@@ -1,3 +1,3 @@
-from .interpolacao import Interpolacao
+from .linear import linear
 
-__all__ = [Interpolacao]
+__all__ = [linear]

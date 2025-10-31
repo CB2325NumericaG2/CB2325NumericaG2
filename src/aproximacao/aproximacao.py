@@ -7,6 +7,9 @@ from .plotagem.plot_linear_minimos_quadrados import (
     plot_linear_minimos_quadrados,
 )
 from .plotagem.plot_linear_theil_sen import plot_linear_theil_sen
+from .plotagem.plot_polinomio_minimos_quadrados import (
+    plot_polinomio_minimos_quadrados,
+)
 
 __all__ = [
     'minimos_quadrados',
@@ -14,6 +17,7 @@ __all__ = [
     'ajuste_polinomial_min_quadrados',
     'plot_linear_minimos_quadrados',
     'plot_linear_theil_sen',
+    'plot_polinomio_minimos_quadrados',
 ]
 
 if __name__ == "__main__":
@@ -52,4 +56,3 @@ if __name__ == "__main__":
     else:
         print(f"y = {b2_ts:.2f}x + {a2_ts:.2f}")
     plot_linear_theil_sen(X2, Y2)
-

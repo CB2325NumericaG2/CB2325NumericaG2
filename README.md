@@ -1,7 +1,13 @@
 ![Banner da biblioteca](./images/Banner.jpg)
 
+![Static Badge](https://img.shields.io/badge/python-3.10-336B9C)
+![Static Badge](https://img.shields.io/badge/size-3.62%20mb-4687BC)
+![Static Badge](https://img.shields.io/badge/pypi-v.0.0.1-FFD43A)
+![Static Badge](https://img.shields.io/badge/test-passing-31C754?logo=github)
+
+
 ## Introdução 
-O `CB2325NumericaG2` foi criada com o intuíto para o trabalho de Programação 3 do périodo 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica que contesse 5 módulos que são: integração, raizes de funções, aproximações e erros
+A `CB2325NumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do périodo 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica que contesse 5 módulos que são: integração, raizes de funções, aproximações e erros
 
 <br>
 
@@ -16,11 +22,9 @@ print(interpolated) # 15
 
 <br>
 
-- [Introdução](#introdução)
+- 🚩[Introdução](#introdução)
 - [🛠️ Colaboradores](#️-colaboradores)
 - [⌨️ Instalação](#️-instalação)
-  - [Básico:](#básico)
-  - [Dependêcias](#dependêcias)
 - [📦 Pacotes](#-pacotes)
 - [🧪 Testes](#-testes)
 - [🧮 Métodos](#-métodos)
@@ -29,6 +33,10 @@ print(interpolated) # 15
 
 
 ## 🛠️ Colaboradores
+
+Agradecimentos a todo o grupo 2 pelo apoio e persistência de todos os membros da equipe. Não teriámos como ter feito [esse trabalho]() sem eles.
+
+<br>
 
 <a href="./images/Huann.png"><img src="./images/Huann.png" width="60px" alt="User avatar: Huann" /></a>
 <a href="./images/Alan.png"><img src="./images/Alan.png" width="60px" alt="User avatar: Alan" /></a>
@@ -75,11 +83,13 @@ Primeiro você tem que estar com todas as dependências baixadas, caso você nã
 
 <br>
 
-Para executar todos os testes unitários dos módulos utilize no terminal no diretório 
-`
+Executando o comando abaixo você inicializa os [testes automatizados]()
+```bash
   pytest
-`
+```
 
-## 🧮 Métodos
+## 🔗 Referência
+
+A reg
 
 ## 📝 Licença

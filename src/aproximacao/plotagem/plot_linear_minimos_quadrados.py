@@ -1,12 +1,12 @@
 import matplotlib.pyplot as plt
-from ..metodos.minimos_quadrados.minimos_quadrados import minimos_quadrados
+from ..minimos_quadrados.minimos_quadrados import minimos_quadrados
 
 def plot_linear_minimos_quadrados(x, y):
     """
-    Plota os pontos fornecidos e a reta de ajuste linear por m��nimos quadrados.
+    Plota os pontos fornecidos e a reta de ajuste linear por mínimos quadrados.
 
-    A fun��ǜo calcula os coeficientes da reta que melhor se ajusta aos pontos (x, y)
-    usando o mǸtodo dos m��nimos quadrados e plota tanto os pontos originais quanto 
+    A função calcula os coeficientes da reta que melhor se ajusta aos pontos (x, y)
+    usando o método dos mínimos quadrados e plota tanto os pontos originais quanto 
     a reta ajustada. Caso todos os valores de x sejam iguais, plota-se uma reta 
     vertical correspondente.
 
@@ -26,7 +26,7 @@ def plot_linear_minimos_quadrados(x, y):
         y_min, y_max = min(y), max(y)
         plt.vlines(b, y_min, y_max, color='crimson', linewidth=2,
                    label=f'Reta vertical: x = {b:.2f}')
-        plt.title('Ajuste Linear - Reta Vertical (M��nimos Quadrados)')
+        plt.title('Ajuste Linear - Reta Vertical (Mínimos Quadrados)')
     else:
         # reta normal
         x_min, x_max = min(x), max(x)
@@ -34,11 +34,10 @@ def plot_linear_minimos_quadrados(x, y):
         y_fit = [a * x_min + b, a * x_max + b]
         plt.plot(x_fit, y_fit, color='crimson', linewidth=2,
                  label=f'Ajuste: y = {a:.2f}x + {b:.2f}')
-        plt.title('Ajuste Linear por M��nimos Quadrados')
+        plt.title('Ajuste Linear por mínimos Quadrados')
 
     plt.xlabel('x')
     plt.ylabel('y')
     plt.legend()
     plt.grid(True)
     plt.show()
-

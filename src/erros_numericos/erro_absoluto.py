@@ -1,6 +1,6 @@
-def erro_Absoluto(number1,number2):
+def erro_Absoluto(number1: float, number2: float) -> float:
     
-        """_summary_
+        """Calcula o erro absoluto entre dois números.
 
         Args:
             number1 (float): recebe um numero do tipo float

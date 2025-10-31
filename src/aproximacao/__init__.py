@@ -1,0 +1,5 @@
+from .minimos_quadrados import minimos_quadrados
+from .theil_sen import theil_sen
+from .plot_linear_minimos_quadrados import plot_linear_minimos_quadrados
+from .plot_linear_theil_sen import plot_linear_theil_sen
+from .ajuste_polinomial_min_quadrados import ajuste_polinomial_min_quadrados

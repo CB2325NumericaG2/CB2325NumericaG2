@@ -1,4 +1,5 @@
 def erro_Absoluto(number1,number2):
+    
         """_summary_
 
         Args:
@@ -8,4 +9,5 @@ def erro_Absoluto(number1,number2):
         Returns:
             float: retorna a diferença absoluta entre os dois números, em módulo
         """
+        
         return abs(number1-number2)

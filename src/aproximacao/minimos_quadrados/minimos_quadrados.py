@@ -1,6 +1,6 @@
 def minimos_quadrados(vetor_x : list,vetor_y : list) -> tuple:
     """
-    MǸtodo de aproxima��ǜo por minimos quadrados.  
+    Método de aproximação por minimos quadrados.  
     Retorna os coeficientes c, a e b da reta cy = ax + b
     a = numerador/denominador
     b = f(a)
@@ -42,6 +42,6 @@ def minimos_quadrados(vetor_x : list,vetor_y : list) -> tuple:
         b = (somatorio_yi - a*somatorio_xi)/n
 
         return a, b, 1
-    else: # Todos os x sǜo iguais => Reta vertical 
+    else: # Todos os x são iguais => Reta vertical 
         return 1, vetor_x[0], 0
 

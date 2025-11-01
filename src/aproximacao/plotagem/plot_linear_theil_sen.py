@@ -26,7 +26,7 @@ def plot_linear_theil_sen(x, y):
                    label=f'Reta vertical: x = {a:.2f}')
         plt.title('Ajuste Linear - Reta Vertical (Theil-Sen)')
     else:
-        # reta nǜo vertical: y = a + b x
+        # reta não vertical: y = a + b x
         x_min, x_max = min(x), max(x)
         x_fit = [x_min, x_max]
         y_fit = [a + b * x_min, a + b * x_max]

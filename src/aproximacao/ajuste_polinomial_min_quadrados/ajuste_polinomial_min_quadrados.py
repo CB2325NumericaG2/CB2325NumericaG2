@@ -6,7 +6,7 @@ def ajuste_polinomial_min_quadrados(x: list[float], y: list[float], grau: int, c
 
     # Vamos criar uma matriz (n x m)
     # n é o grau do polinômio 
-    # m é o nǧmero de coordenadas que o usuǭrio utilizar
+    # m é o número de coordenadas que o usuário utilizar
 
     m = len(x)
     

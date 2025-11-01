@@ -21,7 +21,8 @@ def integral_trapézio(func:Callable[[float],float], pi:float, pf:float, n:int) 
         TypeError: Se um dos seguintes casos ocorrer:
             - func não for uma função chamável 
             - pi e pf não forem float 
-            - n não for inteiro           
+            - n não for inteiro  
+        ZeroDivisionError: n = 0
     """
     if not callable(func):
         raise TypeError("'func' deve ser uma função chamável")
@@ -29,6 +30,10 @@ def integral_trapézio(func:Callable[[float],float], pi:float, pf:float, n:int) 
         raise TypeError("'pi' e 'pf' devem ser números (int ou float)")
     if not isinstance(n, int):
         raise TypeError("'n' deve ser um inteiro")
+    if n == 0:
+        raise ZeroDivisionError("'n' deve ser um inteiro diferente de 0")
+    if n < 0:
+        return None
     h = (pf - pi) / n
     pontos = [pi + h*i for i in range(n+1)]
     
@@ -40,5 +45,5 @@ def integral_trapézio(func:Callable[[float],float], pi:float, pf:float, n:int) 
 
 if __name__ == "__main__":
     f = lambda x: np.sin(x)**2
-    resultado = integral_trapézio(f, -10, 10, 50)
+    resultado = integral_trapézio(f, -10, 10, -100)
     print(f"Integral aproximada = {resultado}")

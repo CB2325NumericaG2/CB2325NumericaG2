@@ -1,44 +1,45 @@
-import integracao_retangulos as integr
-import sympy
+from typing import Callable, Sequence
+from integracao_numerica.integracao_retangulos import integral_retangulo
 
-x_simbolico = sympy.symbols('x')
-
-def integracao_componentes(f_string: str, a: float, b: float, n: int, ponto_corte: float) -> tuple:
+def integral_componentes(
+    f_vec: Callable[[float], Sequence[float]],
+    a: float,
+    b: float,
+    n: int,
+    ponto_corte: float
+) -> tuple[float, ...]:
     '''
-    Entradas: 
-    f_string - string com os componentes da curva em formato de tupla
+    Entradas:
+    f_vec - função vetorial f(x) que retorna uma sequência numérica (tupla ou lista)
+            Exemplo: lambda x: (x**2, x**3)
     a - ponto inicial do intervalo
     b - ponto final do intervalo
     n - número de subintervalos da partição
-    ponto_corte - parâmetro de altura do subintervalo
+    ponto_corte - parâmetro de altura do subintervalo, recebe:
+        - 0   -> Soma de Riemann pela Esquerda
+        - 1   -> Soma de Riemann pela Direita
+        - 0.5 -> Soma de Riemann pelo Centro
 
-    Saída: Integral aproximada pela Soma de Riemann com método dos retângulos de cada componente da curva
+    Saída:
+    Tupla com as integrais aproximadas (uma por componente)
     '''
-    expr_simbolicas = sympy.sympify(f_string) 
+    # Avalia a função uma vez para saber quantas componentes ela tem
+    exemplo = f_vec(a)
+    if not isinstance(exemplo, (tuple, list)):
+        raise TypeError("A função vetorial deve retornar uma tupla ou lista numérica.")
+
     areas = []
-    for componente in expr_simbolicas:
-      area = integr.integral_retangulo(componente, a, b, n, ponto_corte)
-      areas.append(area)
-    tupla_areas = tuple(areas)
-    return tupla_areas
+    for i in range(len(exemplo)):
+        # Cria função para o i-ésimo componente
+        componente_i = lambda x, i=i: f_vec(x)[i]
+        area_i = integral_retangulo(componente_i, a, b, n, ponto_corte)
+        areas.append(area_i)
 
-def usuario() -> None:
-    '''
-    Solicita inserção de função, ponto de início, ponto de fim, número de subintervalos e parâmetro de altura ao usuário.
-    Converte os inputs recebidos em tipos adequados aos parâmetros das funções.
-    Chama a função integração_componente para cálculo da integral de cada componente
-    '''
-    string = input('Digite a função:')
-    valor_a = input('Digite o ponto inicial da integração:')
-    valor_b = input('Digite o ponto final da integração:')
-    valor_n = input('Digite o valor de subintervalos da integração por componentes:')
-    valor_corte = input('Digite 0 para Soma de Riemann pela Esquerda,' \
-                                '1 para Soma de Riemann pela Direita,'  \
-                                '0.5 para Soma de Riemann pelo Centro:')
-    
-    a_num = float(valor_a)
-    b_num = float(valor_b)
-    n_int = int(valor_n)
-    corte_num = float(valor_corte)
+    return tuple(areas)
+  
+# Teste unitário
 
-    print(integracao_componentes(string, a_num, b_num, n_int, corte_num))
+if __name__ == "__main__":
+  f = lambda x: (x**2, x**3, x)
+  resultado = integral_componentes(f, 0, 2, 100, 0.5)
+  print(resultado)

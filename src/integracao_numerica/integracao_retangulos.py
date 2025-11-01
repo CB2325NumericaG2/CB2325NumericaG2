@@ -107,5 +107,3 @@ def plote_grafico(f_string: str, a: float, b: float, n: int, ponto_corte: float)
     ax.set_ylim([min_y - max_y*0.05, max_y * 1.1])
    
     plt.show()
-
-usuario()

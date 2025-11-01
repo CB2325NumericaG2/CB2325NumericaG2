@@ -11,10 +11,9 @@ class PolinomioInterpolador:
         """
         self.x=np.array(x)
         self.y=np.array(y)
-        self.coeficientes=self._coeficientes()
 
-    def _coeficientes(self) -> list[float]:
-        """Retorna os coeficientes do polinômio interpolador de grau n-1.
+    def coeficientes(self) -> list[float]:
+        """Calcula e retorna os coeficientes do polinômio interpolador de grau n-1.
 
         O método calcula os coeficientes do polinômio interpolador que passa pelos
         pontos (x,y) por meio da construção da matriz de Vandermonde V e resolvendo o
@@ -32,40 +31,66 @@ class PolinomioInterpolador:
         X = np.linalg.solve(matrizV, self.y)
         return X
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Representa o polinômio interpolador em formato de string.
 
         Returns:
             str: Representação no formato (a_0*x^0)+(a_1*x^1)+...+(a_n*x^n)
         """
-        if len(self.coeficientes)==0:
+        X = self.coeficientes()
+        if len(X)==0:
             return "0"
-        polinomio = f"({self.coeficientes[0]}*x^0)"
-        for i in range(1,len(self.coeficientes)):
-            polinomio="".join([polinomio,f"+({self.coeficientes[i]}*x^{i})"])
+        polinomio = f"({X[0]}*x^0)"
+        for i in range(1,len(X)):
+            polinomio="".join([polinomio,f"+({X[i]}*x^{i})"])
         return polinomio
     
-    def __repr__(self):
-        return self.coeficientes.tolist()
-    
-    def interpolacao(self, x):
-        """Avalia o polinômio interpolador no valor de x.
+    def _lagrange(self,x:float|int|np.float64|np.float32|np.int64|np.int32):
+        """Avalia o polinômio interpolador para o valor x pelo método de Lagrange.
 
+        O método calcula o valor de y no ponto (x,y) no polinômio interpolador de
+        Lagrange.
+        
         Args:
-            x: O(s) ponto(s) onde o polinômio deve ser avaliado. 
+            x: Valor a ser interpolado.
 
         Returns:
-            float: O resultado da avaliação do polinômio.
-        """
-        x = np.array(x)
-        invertido = self.coeficientes[::-1]
-        resultado = np.polyval(invertido, x)
-        return resultado
+            float: Resultado de x no polinômio interpolador.
 
+        Raises:
+            ValueError: Se x não é do tipo numérico 
+        """
+        P=0
+        for i in range(len(self.x)):
+            p = 1
+            for j in range(len(self.x)):
+                if i!=j:
+                    p*=(x-self.x[j])/(self.x[i]-self.x[j])
+            P+=p*self.y[i]
+        return P
+    
+    def __call__(self, x):
+        if isinstance(x,(float, int, np.float64, np.float32, np.int64, np.int32)):
+            return self._lagrange(x)
+        elif isinstance(x,(list,np.ndarray)):
+            resultados = []
+            for i in x:
+                resultados.append(self._lagrange(i))
+            return resultados
+        raise ValueError
+    
+    '''def add(self,x,y):
+        """Atualiza o polinômio interpolador com a adição de pontos"""
+
+    def remove(self,x):
+        """Atualiza o polinômio interpolador com a remoção de pontos"""'''
 
 polinomio = PolinomioInterpolador([1,2,-3,4,5,0],[-39,-368,-243,-3456,-6875,0])
 print(polinomio)
-print(PolinomioInterpolador.interpolacao(polinomio,2))
-print(PolinomioInterpolador.interpolacao(polinomio,1))
-print(PolinomioInterpolador.interpolacao(polinomio,[2,1]))
-print(polinomio.__repr__())
+print(polinomio(2))
+print(polinomio(1))
+print(polinomio(3))
+print(polinomio(-3))
+print(polinomio(6))
+print(polinomio([2,1]))
+print(polinomio.coeficientes())

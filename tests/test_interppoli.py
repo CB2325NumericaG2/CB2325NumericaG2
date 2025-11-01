@@ -22,4 +22,4 @@ from src.interpolacao import PolinomioInterpolador
 )
 def test_polinomial_parametrico(x, y, esperado):
     resultado = PolinomioInterpolador(x, y)
-    assert resultado.__repr__() == pytest.approx(esperado, abs=1e-9)
+    assert resultado.coeficientes == pytest.approx(esperado, abs=1e-9)

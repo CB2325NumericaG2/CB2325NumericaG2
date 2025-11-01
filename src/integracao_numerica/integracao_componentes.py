@@ -17,7 +17,7 @@ def integracao_componentes(f_string: str, a: float, b: float, n: int, ponto_cort
     expr_simbolicas = sympy.sympify(f_string) 
     areas = []
     for componente in expr_simbolicas:
-      area = integr.metodo_retangulo(componente, a, b, n, ponto_corte)
+      area = integr.integral_retangulo(componente, a, b, n, ponto_corte)
       areas.append(area)
     tupla_areas = tuple(areas)
     return tupla_areas

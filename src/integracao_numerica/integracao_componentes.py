@@ -26,8 +26,7 @@ def usuario() -> None:
     '''
     Solicita inserção de função, ponto de início, ponto de fim, número de subintervalos e parâmetro de altura ao usuário.
     Converte os inputs recebidos em tipos adequados aos parâmetros das funções.
-    Chama a função metodo_retangulo para calculo da integral.
-    Chama a função plote_grafico para visualização gráfica do método.
+    Chama a função integração_componente para cálculo da integral de cada componente
     '''
     string = input('Digite a função:')
     valor_a = input('Digite o ponto inicial da integração:')
@@ -43,5 +42,3 @@ def usuario() -> None:
     corte_num = float(valor_corte)
 
     print(integracao_componentes(string, a_num, b_num, n_int, corte_num))
-
-usuario()

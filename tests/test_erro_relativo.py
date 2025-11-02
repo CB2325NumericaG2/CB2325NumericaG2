@@ -1,4 +1,5 @@
 # Teste da função erro relativo 
+from src.erros_numericos import erro_relativo 
 
 def test_erro_relativo():
     assert erro_relativo(3.141592, 3.14) == 0.0005067

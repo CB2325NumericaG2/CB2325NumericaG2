@@ -13,7 +13,7 @@ def linear(
 
     A método permite dois modos de uso:
         - Modo cartesiano (R²): o usuário fornece um valor 'x' intermediário entre
-        as abscissas de 'a' e 'b', e a função retorna o valor interpolado de 'y'.
+        as abscissas de 'a' e 'b', e a função retorna o valor interpolado de 'y';
         - Modo paramétrico (Rⁿ): o usuário fornece um parâmetro 't' ∈ [0, 1],
         e a função retorna o ponto interpolado entre 'a' e 'b' em qualquer dimensão.
 
@@ -30,15 +30,15 @@ def linear(
 
     Returns:
         float | list[float]
-            - Se 'x' é fornecido, retorna o valor interpolado de 'y(x)' (float).
+            - Se 'x' é fornecido, retorna o valor interpolado de 'y(x)' (float);
             - Se 't' é fornecido, retorna o vetor interpolado 'p(t)' (list[float]).
 
     Raises:
         ValueError
-            - Se 'a' e 'b' têm dimensões diferentes.
-            - Se nenhum ou ambos os parâmetros ('x', 't') são fornecidos.
-            - Se 'x' é usado fora do intervalo definido por 'a' e 'b'.
-            - Se 'x' é usado com vetores que não pertencem a R².
+            - Se 'a' e 'b' têm dimensões diferentes;
+            - Se nenhum ou ambos os parâmetros ('x', 't') são fornecidos;
+            - Se 'x' é usado fora do intervalo definido por 'a' e 'b';
+            - Se 'x' é usado com vetores que não pertencem a R²;
             - Se 't' não está no intervalo [0, 1].
     """
     vetor = []

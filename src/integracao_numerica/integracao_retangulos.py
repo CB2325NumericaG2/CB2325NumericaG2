@@ -4,7 +4,7 @@ from typing import Callable
 
 def integral_retangulo(func:Callable[[float],float], a: float, b: float, n: int, ponto_corte:float = 0) -> float:
     '''
-    Entradas:
+    Args:
     f_string - expressão algébrica
     a - ponto inicial do intervalo
     b - ponto final do intervalo
@@ -14,7 +14,7 @@ def integral_retangulo(func:Callable[[float],float], a: float, b: float, n: int,
         - 1 para Soma de Riemann pela Direita
         - 0.5 para Soma de Riemann pelo Centro
 
-    Saída: Integral aproximada pela Soma de Riemann com método dos retângulos
+    Returns: Integral aproximada pela Soma de Riemann com método dos retângulos
     '''
     
     variacao = (b - a) / n  
@@ -22,9 +22,7 @@ def integral_retangulo(func:Callable[[float],float], a: float, b: float, n: int,
 
     for i in range(n):
         x_inicio = a + i * variacao
-        y_inicio = func(x_inicio)
         x_fim = x_inicio + variacao
-        y_fim = func(x_fim)
 
         x_altura = x_inicio + ponto_corte * (x_fim - x_inicio)
         y_altura = func(x_altura)

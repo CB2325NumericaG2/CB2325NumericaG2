@@ -20,9 +20,7 @@ def integral_retangulo(func:Callable[[float],float], a: float, b: float, n: int,
 
     for i in range(n):
         x_inicio = a + i * variacao
-        y_inicio = func(x_inicio)
         x_fim = x_inicio + variacao
-        y_fim = func(x_fim)
 
         x_altura = x_inicio + ponto_corte * (x_fim - x_inicio)
         y_altura = func(x_altura)
@@ -39,7 +37,7 @@ def integral_componentes(
     ponto_corte: float
 ) -> tuple[float, ...]:
     '''
-    Entradas:
+    Args:
     f_vec - função vetorial f(x) que retorna uma sequência numérica (tupla ou lista)
             Exemplo: lambda x: (x**2, x**3)
     a - ponto inicial do intervalo
@@ -50,7 +48,7 @@ def integral_componentes(
         - 1   -> Soma de Riemann pela Direita
         - 0.5 -> Soma de Riemann pelo Centro
 
-    Saída:
+    Returns:
     Tupla com as integrais aproximadas (uma por componente)
     '''
     # Avalia a função uma vez para saber quantas componentes ela tem

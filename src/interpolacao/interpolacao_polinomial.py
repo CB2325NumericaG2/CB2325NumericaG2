@@ -40,10 +40,10 @@ class PolinomioInterpolador:
         X = self.coeficientes()
         if len(X)==0:
             return "0"
-        polinomio = f"({X[0]}*x^0)"
+        polinomio = f"({X[0]:.10g}*x^0)"
         for i in range(1,len(X)):
-            polinomio="".join([polinomio,f"+({X[i]}*x^{i})"])
-        return polinomio
+            polinomio="".join([polinomio,f"+{X[i]:.10g}*x^{i}"])
+        return polinomio.replace("+-","+")
     
     def _lagrange(self,x:float|int|np.float64|np.float32|np.int64|np.int32):
         """Avalia o polinômio interpolador para o valor x pelo método de Lagrange.

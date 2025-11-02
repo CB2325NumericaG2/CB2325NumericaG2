@@ -104,5 +104,4 @@ class PolinomioHermite:
         elif isinstance(x, (list, np.ndarray)):
             resultados = [self.avaliar(float(i)) for i in x]
             return resultados
-        else:
-            raise ValueError
+        raise ValueError

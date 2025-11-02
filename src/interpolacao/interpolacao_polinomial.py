@@ -58,7 +58,7 @@ class PolinomioInterpolador:
             float: Resultado de x no polinômio interpolador.
 
         Raises:
-            ValueError: Se x não é do tipo numérico 
+            ValueError: Se x não é do tipo numérico.
         """
         P=0
         for i in range(len(self.x)):
@@ -70,6 +70,17 @@ class PolinomioInterpolador:
         return P
     
     def __call__(self, x):
+        """Permite que o polinômio atue como uma função matemática com entrada x.
+        
+        Args:
+            x: Valor(es) a ser(em) interpolado(s).
+
+        Returns:
+            Resultado de x no polinômio interpolador.
+
+        Raises:
+            ValueError: Se x não é do tipo numérico.
+        """
         if isinstance(x,(float, int, np.float64, np.float32, np.int64, np.int32)):
             return self._lagrange(x)
         elif isinstance(x,(list,np.ndarray)):
@@ -84,13 +95,3 @@ class PolinomioInterpolador:
 
     def remove(self,x):
         """Atualiza o polinômio interpolador com a remoção de pontos"""'''
-
-polinomio = PolinomioInterpolador([1,2,-3,4,5,0],[-39,-368,-243,-3456,-6875,0])
-print(polinomio)
-print(polinomio(2))
-print(polinomio(1))
-print(polinomio(3))
-print(polinomio(-3))
-print(polinomio(6))
-print(polinomio([2,1]))
-print(polinomio.coeficientes())

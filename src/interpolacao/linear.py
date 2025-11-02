@@ -2,7 +2,7 @@ from typing import Optional, TypeAlias
 
 Vetor: TypeAlias = list[float]
 
-def linear(
+def interpolacao_linear(
     a: Vetor,
     b: Vetor,
     x:Optional[float] = None,

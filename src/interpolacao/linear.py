@@ -52,6 +52,8 @@ def interpolacao_linear(
         raise ValueError('Apenas um dos parâmetros deve ser passado (x ou t).')
     
     if x is not None:
+        if a[0] == a[1]:
+            raise ValueError(f'Pontos consecutivos com mesmo x = {a[0]} geram um segmento vertical: interpolação indefinida.')
         if len(a) != 2 or len(b) != 2:
             raise ValueError('Interpolação por x só é válida para vetores no R2')
         x_min, x_max = sorted([a[0], b[0]])

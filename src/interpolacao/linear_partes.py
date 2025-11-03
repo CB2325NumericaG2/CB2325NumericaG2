@@ -1,5 +1,5 @@
 from typing import Sequence
-from linear import interpolacao_linear
+from interpolacao.linear import interpolacao_linear
 
 Vetor = list[float]
 

@@ -1,4 +1,4 @@
-def erro_Absoluto(number1: float, number2: float) -> float:
+def erro_absoluto(number1: float, number2: float) -> float:
     
         """Calcula o erro absoluto entre dois números.
 

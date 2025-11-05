@@ -1,6 +1,6 @@
 import pytest
 
-from interpolacao import linear
+from src.interpolacao import linear
 
 @pytest.mark.parametrize(
     "a, b, t, esperado",

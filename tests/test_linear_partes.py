@@ -1,6 +1,6 @@
 import pytest
 
-from interpolacao import linear_partes
+from src.interpolacao import linear_partes
 
 @pytest.mark.parametrize(
     "x_vals, y_vals, x, esperado",
@@ -29,10 +29,3 @@ def test_linear_partes_basico(x_vals, y_vals, x, esperado):
 def test_linear_partes_erros(x_vals, y_vals, x, mensagem):
     with pytest.raises(ValueError, match=mensagem):
         linear_partes(x_vals, y_vals, x)
-
-
-def test_linear_partes_intervalo_nao_encontrado():
-    """Garante que um erro interno é levantado se nenhum intervalo for achado (caso raro)."""
-    with pytest.raises(RuntimeError, match="não foi encontrado o intervalo correspondente"):
-        linear_partes([1, 2, 3], [4, 5, 6], 2.5)
-    

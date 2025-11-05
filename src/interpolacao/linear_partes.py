@@ -49,5 +49,3 @@ def interpolacao_linear_partes(
             raise ValueError(f'Pontos consecutivos com mesmo x = {x0} geram um segmento vertical: interpolação indefinida.')
         if x0 <= x <= x1:
             return interpolacao_linear([x0, y0], [x1, y1], x = x)
-    
-    raise RuntimeError("Erro interno: não foi encontrado o intervalo correspondente.")

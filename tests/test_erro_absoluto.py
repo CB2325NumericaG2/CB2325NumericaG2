@@ -1,5 +1,6 @@
-from src.erros_numericos import erro_absoluto
 import pytest
+
+from src.erros import erro_absoluto
 
 def test_numeros_positivos():
     assert erro_absoluto(5, 3) == 2

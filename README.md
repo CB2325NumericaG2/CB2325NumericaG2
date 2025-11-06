@@ -79,16 +79,12 @@ pip install -r requirements.txt
 
 ## 🧪 Testes
 
-Primeiro você tem que estar com todas as dependências baixadas, caso você não tenha, você pode buscar na [sessão de instalação](#️-instalação). 
-
-<br>
-
-Executando o comando abaixo você inicializa os [testes automatizados]()
+Primeiro você tem que estar com todas as dependências baixadas, caso você não tenha, você pode buscar na [sessão de instalação](#️-instalação). Executando o comando abaixo você inicializa os [testes automatizados]()
 ```bash
   pytest tests/
 ```
 
-## 🔗 Referência
+## 🔗 Referências
 
 Todas as referências vão estar dentro do [PyPI](https://pypi.org/project/cb2325numericag2/) para consulta e uso.
 

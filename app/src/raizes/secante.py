@@ -1,25 +1,23 @@
-from typing import Callable, TypeAlias
+from typing import Callable
 
-FuncaoReal: TypeAlias = Callable[[float], float]
-
-def secante(f: FuncaoReal, x0: float, x1: float, tol=1e-6, max_iter=100) -> float:
+def secante(f: Callable[[float], float], x0: float, x1: float, tol=1e-6, max_iter=100) -> float:
     """
     Encontra uma raiz da função f usando o método da secante.
 
     O método da secante é um método numérico para encontrar raízes de funções que utiliza
     uma aproximação linear baseada em dois pontos iniciais.
 
-    Parâmetros:
-    f : função
-        A função para a qual se deseja encontrar a raiz.
-    x0 : float
-        O primeiro ponto inicial.
-    x1 : float
-        O segundo ponto inicial.
-    tol : float
-        A tolerância para o critério de parada.
-    max_iter : int
-        O número máximo de interações permitidas.
+    Args:
+        f : função
+            A função para a qual se deseja encontrar a raiz.
+        x0 : float
+            O primeiro ponto inicial.
+        x1 : float
+            O segundo ponto inicial.
+        tol : float
+            A tolerância para o critério de parada.
+        max_iter : int
+            O número máximo de interações permitidas.
     
     Retorna:
         float: Aproximação da raiz da função f(x).
@@ -42,3 +40,5 @@ if __name__ == "__main__":
     f = lambda x: x**2 - 2
     raiz = secante(f, 1, 2)
     print(raiz)
+
+secante

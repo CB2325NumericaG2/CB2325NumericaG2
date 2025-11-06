@@ -1,4 +1,3 @@
-from interpolacao import Interpolacao as interpolacao
-import raizes_de_funcoes
+from .interpolacao import linear
 
-__all__ = [raizes_de_funcoes, interpolacao]
+# __all__= [linear]

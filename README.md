@@ -85,11 +85,15 @@ Primeiro você tem que estar com todas as dependências baixadas, caso você nã
 
 Executando o comando abaixo você inicializa os [testes automatizados]()
 ```bash
-  pytest
+  pytest tests/
 ```
 
 ## 🔗 Referência
 
-A reg
+Todas as referências vão estar dentro do [PyPI](https://pypi.org/project/cb2325numericag2/) para consulta e uso.
 
 ## 📝 Licença
+
+Copyright todos os direitos reservados
+
+Distruibuidos pelos termos de licença do [MIT](https://alguma.com) de graça e open source.

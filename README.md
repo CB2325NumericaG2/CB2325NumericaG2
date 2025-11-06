@@ -1,4 +1,4 @@
-![Banner da biblioteca](./images/Banner.jpg)
+![Banner da biblioteca](./images/Banner%20Correção%20Uso%20da%20marca.jpg)
 
 ![Static Badge](https://img.shields.io/badge/python-3.10-336B9C)
 ![Static Badge](https://img.shields.io/badge/size-3.62%20mb-4687BC)

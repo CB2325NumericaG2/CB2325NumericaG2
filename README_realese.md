@@ -11,27 +11,27 @@
 
 ## Erros Numéricos
 
-| Métodos                                                   | Descrição                                           | Argumentos                                              |
-|-----------------------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|
-| `erro_absluto`                                            | Calcula o erro absoluto de dois valores             |                                                         |
-| `erro_relativo`                                           | Calcula o errro relativo de um intervalo            |                                                         |                                                         |
+| Métodos                                                   | Descrição                                           | Argumentos                                                                         |
+|-----------------------------------------------------------|-----------------------------------------------------|------------------------------------------------------------------------------------|
+| `erro_absluto`                                            | Calcula o erro absoluto de dois valores             | `valor_real`: valor real <br> `valor_aproximado`: valor aproximado                      |                                  |
+| `erro_relativo`                                           | Calcula o errro relativo de um intervalo            | `valor1`: primeiro valor <br> `valor2`: segundo valor                                                                                   |                                                         |
 
 ## Raízes de funções
 
-| Métodos                                   | Descrição                                           | Argumentos                                              |
-|-------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|
-| `newton_raphson`                          | Calcula o erro absoluto de dois valores             |                                                         |
-| `biseccao`                                | Calcula o errro relativo de um intervalo            |                                                         |                                                         |
-| `secante`                                 | Calcula o errro relativo de um intervalo            |                                                         |                                                         |
+| Métodos                                   | Descrição                                                               | Argumentos                                              |
+|-------------------------------------------|-------------------------------------------------------------------------|---------------------------------------------------------|
+| `newton_raphson`                          | Calcula o erro absoluto de dois valores                                 | `f`: função f(x) <br> `x0`: ponto inicial <br> `tol`: tolerância <br> `max_iter`: número máximo de iterações<br> `df`: Derivada de f(x)                                                         |
+| `biseccao`                                | Calcula o errro relativo de um intervalo                                | `f`: função f(x) <br> `a`: menor do intervalo <br> `b`: maior do intervalo <br> `tol`: tolerancia <br> `max_iter`: número de iterações máxima                                                        |                                                         |
+| `secante`                                 | Calcula o errro relativo de um intervalo                                |                                                         |                                                         |
 
 Você pode ver
 
 ## Interpolações
 
-| Métodos                                   | Descrição                                           | Argumentos                                              |
-|-------------------------------------------|-----------------------------------------------------|---------------------------------------------------------|
-| `linear`                                  | Calcula o erro absoluto de dois valores             |                                                         |
-| `linear_partes`                           | Calcula o errro relativo de um intervalo            |                                                         |                                                         |
+| Métodos                                   | Descrição                                                                   | Argumentos                                              |
+|-------------------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------|
+| `linear`                                  | Faz a interpolação linear de uma escala e obtém o valor correspondente.     | `a`: primeiro ponto <br> `b`: segundo ponto <br> `x`: valor independente entre `a` e `b` <br> `t`: parâmetro da interpolação entre 0 e 1                                                       |
+| `linear_partes`                           | Faz a interpolação po partes de acordo com o número de amostras.            |                     |                                    |                                                         |
 
 ### `linear` 
 

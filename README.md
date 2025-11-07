@@ -13,11 +13,11 @@ A `CB2325NumericaG2` foi criada como forma de aprendizado para o trabalho de Pro
 
 Um simples exemplo de uso:
 ```python
-from CB2325NumericaG2 import Interpolacao
+from CB2325NumericaG2.interpolacao import linear 
 
-interpolated = Interpolacao.linear(10, 20, 0.5)
+valor_interpolado = linear(10, 20, 0.5)
 
-print(interpolated) # 15
+print(valor_interpolado) # 15
 ```
 
 <br>
@@ -27,14 +27,16 @@ print(interpolated) # 15
 - [⌨️ Instalação](#️-instalação)
 - [📦 Pacotes](#-pacotes)
 - [🧪 Testes](#-testes)
-- [🧮 Métodos](#-métodos)
+- [🔗 Referências](#-referências)
 - [📝 Licença](#-licença)
+
+
 
 
 
 ## 🛠️ Colaboradores
 
-Agradecimentos a todo o grupo 2 pelo apoio e persistência de todos os membros da equipe. Não teriámos como ter feito [esse trabalho]() sem eles.
+Agradecimentos a todo os aluunos do grupo 2 pelo apoio e persistência de todos os membros da equipe. Não teriámos como ter feito [esse trabalho]() sem eles.
 
 <br>
 
@@ -56,13 +58,12 @@ Agradecimentos a todo o grupo 2 pelo apoio e persistência de todos os membros d
 
 Para começar a usar o nosso pacote primeiro você tem que ter o [python](https://www.python.org/downloads/) na versão **no mínimo 3.10**. Assim execute o comando abaixo para fazer a instalação do nosso pacote.
 
-
 ```bash
 pip install CB2325NumericaG2
 ```
-### Dependêcias
+### Dependêcias (Desenvolvedor)
 
-Depois de executado se as dependências do projeto não estiverem instaladas, você pode executar o comando abaixo:
+Caso você queira atuar como desenvolvedor do projeto, depois de clonar o repositório, 
 
 ```bash
 pip install -r requirements.txt
@@ -75,8 +76,6 @@ pip install -r requirements.txt
 * [matplotlib]()
 * [plotly]()
 
-<br>
-
 ## 🧪 Testes
 
 Primeiro você tem que estar com todas as dependências baixadas, caso você não tenha, você pode buscar na [sessão de instalação](#️-instalação). Executando o comando abaixo você inicializa os [testes automatizados]()
@@ -86,10 +85,10 @@ Primeiro você tem que estar com todas as dependências baixadas, caso você nã
 
 ## 🔗 Referências
 
-Todas as referências vão estar dentro do [PyPI](https://pypi.org/project/cb2325numericag2/) para consulta e uso.
+Todas as referências vão estar disponíveis no [PyPI](https://pypi.org/project/cb2325numericag2/) para consulta e uso.
 
 ## 📝 Licença
 
-Copyright todos os direitos reservados
+&copy; Copyright todos os direitos reservados
 
 Distruibuidos pelos termos de licença do [MIT](https://alguma.com) de graça e open source.

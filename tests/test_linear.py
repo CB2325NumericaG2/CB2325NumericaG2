@@ -1,4 +1,5 @@
 import pytest
+
 from src.interpolacao import linear
 
 @pytest.mark.parametrize(

@@ -13,7 +13,8 @@ from src.interpolacao import linear_partes
     ]
 )
 def test_linear_partes_basico(x_vals, y_vals, x, esperado):
-    resultado = linear_partes(x_vals, y_vals, x)
+    interpolador = linear_partes(x_vals, y_vals)
+    resultado = interpolador(x)
     assert pytest.approx(resultado, rel=1e-9) == esperado
 
 
@@ -28,4 +29,5 @@ def test_linear_partes_basico(x_vals, y_vals, x, esperado):
 )
 def test_linear_partes_erros(x_vals, y_vals, x, mensagem):
     with pytest.raises(ValueError, match=mensagem):
-        linear_partes(x_vals, y_vals, x)
+        interpolador = linear_partes(x_vals, y_vals)
+        interpolador(x)

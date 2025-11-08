@@ -1,8 +1,8 @@
 import pytest
 import math
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+# import sys
+# import os
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 from raizes_de_funcoes import bissecao, newton_raphson, secante
 

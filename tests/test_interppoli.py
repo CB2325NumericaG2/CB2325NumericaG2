@@ -1,5 +1,5 @@
 import pytest
-from src.interpolacao import PolinomioInterpolador
+from src.interpolacao import polinomial
 
 @pytest.mark.parametrize(
     "x, y, esperado",
@@ -21,5 +21,5 @@ from src.interpolacao import PolinomioInterpolador
     ]
 )
 def test_polinomial_parametrico(x, y, esperado):
-    resultado = PolinomioInterpolador(x, y)
+    resultado = polinomial(x, y)
     assert resultado.coeficientes == pytest.approx(esperado, abs=1e-9)

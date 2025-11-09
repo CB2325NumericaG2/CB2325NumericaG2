@@ -56,19 +56,19 @@ class PolinomioHermite:
         return d[0]
     
     @property
-    def coeficientes(self) -> str:
-        return str(self._todos_coeficientes())
+    def coeficientes(self) -> list[float]:
+        return self._todos_coeficientes()
     
     @property
     def polinomio(self) -> str:
         return str(self._forma_padrao_simbolica())
 
-    def __repr__(self) -> List[float]:
-        return self._forma_padrao_simbolica()
+    def __repr__(self) -> list[float]:
+        return self._todos_coeficientes()
 
     def __str__(self) -> str:
         """Representa em string o polinômio interpolador na forma de Newton."""
-        return str(self._todos_coeficientes())
+        return str(self._forma_padrao_simbolica())
 
     def avaliar(self, x: float|int) -> float:
         """Avalia o polinômio interpolador para o valor x.
@@ -144,10 +144,3 @@ class PolinomioHermite:
             resultados = [self.avaliar(float(i)) for i in x]
             return resultados
         raise ValueError
-
-
-hermite = PolinomioHermite([(-1, 2, -8, 56), (0, 1, 0, 0), (1, 2, 8, 56)])
-
-print(hermite(-2))
-print(hermite.polinomio)
-print(hermite.coeficientes)

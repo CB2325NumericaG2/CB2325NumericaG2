@@ -1,4 +1,6 @@
 import numpy as np
+import sympy as sp
+from typing import List
 import math
 
 class PolinomioHermite:
@@ -31,7 +33,7 @@ class PolinomioHermite:
                 self.y[indice + i] = tupla[1] #f(x)
                 self.derivadas[(x, i)] = tupla[1 + i] #derivadas
             indice += derivadas
-        self.coeficientes = self.newton()
+        self._coeficientes = self.newton()
         
     def newton(self) -> np.ndarray:
         """Calcula os coeficientes do polinômio de Hermite pelo método de Newton de
@@ -52,18 +54,21 @@ class PolinomioHermite:
                     derivada = self.derivadas.get((x, i), 0.0) 
                     d[j, i] = derivada / math.factorial(i)
         return d[0]
+    
+    @property
+    def coeficientes(self) -> str:
+        return str(self._todos_coeficientes())
+    
+    @property
+    def polinomio(self) -> str:
+        return str(self._forma_padrao_simbolica())
+
+    def __repr__(self) -> List[float]:
+        return self._forma_padrao_simbolica()
 
     def __str__(self) -> str:
         """Representa em string o polinômio interpolador na forma de Newton."""
-        if len(self.coeficientes) == 0:
-            return "0"
-        polinomio = f"({self.coeficientes[0]})" # c_0
-        for i in range(1, self.condicoes):
-            termo = f"({self.coeficientes[i]})" # c_i
-            for j in range(i):
-                termo += f"*(x-({self.x[j]}))"
-            polinomio += f"+{termo}"
-        return polinomio
+        return str(self._todos_coeficientes())
 
     def avaliar(self, x: float|int) -> float:
         """Avalia o polinômio interpolador para o valor x.
@@ -77,16 +82,50 @@ class PolinomioHermite:
         Raises:
             ValueError: Se x não é do tipo numérico 
         """
-        if len(self.coeficientes) == 0:
+        if len(self._coeficientes) == 0:
             return 0
-        polinomio = self.coeficientes[0] # c_0
+        polinomio = self._coeficientes[0] # c_0
         for i in range(1, self.condicoes):
-            termo = self.coeficientes[i] # c_i
+            termo = self._coeficientes[i] # c_i
             for j in range(i):
                 termo *=(x-self.x[j])
             polinomio += termo
         return polinomio
-    
+
+    def _forma_padrao_simbolica(self) -> sp.Expr:
+            """
+            Calcula e retorna o polinômio na forma padrão (expandida)
+            usando a biblioteca SymPy.
+            """
+            if len(self._coeficientes) == 0:
+                return sp.Integer(0)
+
+            x = sp.Symbol('x')
+            poly = sp.Float(self._coeficientes[0])
+            prod_term = 1
+            
+            for i in range(1, self.condicoes):
+                # (x - z0) * (x - z1) * ... * (x - z_{i-1})
+                prod_term *= (x - self.x[i - 1])
+                # Adiciona c_i * produto
+                poly += sp.Float(self._coeficientes[i]) * prod_term
+
+            return sp.expand(poly)
+
+    def _todos_coeficientes(self) -> list[float]:
+        expressao = self._forma_padrao_simbolica()
+
+        if expressao == sp.Integer(0) and self.grau >= 0:
+            return [0.0] * (self.grau + 1)
+        
+        x = sp.Symbol('x')
+        polinomio_obj = expressao.as_poly()
+
+        coeficientes = polinomio_obj.all_coeffs()
+
+        resultado = [float(coeficiente) for coeficiente in coeficientes]
+        return resultado
+        
     def __call__(self, x: float|int|list[float|int]|np.ndarray) -> float|list[float]:
         """Permite que o polinômio atue como uma função matemática com entrada x.
         
@@ -105,3 +144,10 @@ class PolinomioHermite:
             resultados = [self.avaliar(float(i)) for i in x]
             return resultados
         raise ValueError
+
+
+hermite = PolinomioHermite([(-1, 2, -8, 56), (0, 1, 0, 0), (1, 2, 8, 56)])
+
+print(hermite(-2))
+print(hermite.polinomio)
+print(hermite.coeficientes)

@@ -1,6 +1,8 @@
 from .interpolacao import (
   linear, 
-  linear_partes
+  linear_partes,
+  polinomial_hermite,
+  polinomial
 )
 
 from .aproximacao import (
@@ -30,6 +32,8 @@ from .integracao import (
 __all__= [
   "linear",
   "linear_partes", 
+  "polinomial",
+  "polinomial_hermite",
   "minimos_quadrados", 
   "theil_sen",
   "ajuste_polinomial_min_quadrados",

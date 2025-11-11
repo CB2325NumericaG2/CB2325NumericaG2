@@ -1,13 +1,13 @@
 ![Banner da biblioteca](./images/Banner%20Correção%20Uso%20da%20marca.jpg)
 
 ![Static Badge](https://img.shields.io/badge/python-3.10-336B9C)
-![Static Badge](https://img.shields.io/badge/size-3.62%20mb-4687BC)
-![Static Badge](https://img.shields.io/badge/pypi-v.0.0.1-FFD43A)
+![Static Badge](https://img.shields.io/badge/size-4.31%20mb-4687BC)
+![Static Badge](https://img.shields.io/badge/pypi-v.0.0.2-FFD43A)
 ![Static Badge](https://img.shields.io/badge/test-passing-31C754?logo=github)
 
 
 ## Introdução 
-A `CB2325NumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do périodo 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica que contesse 5 módulos que são: integração, raizes de funções, aproximações e erros
+A `CB2325NumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do período 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica contendo 5 módulos que são: integração, raízes de funções, aproximações e erros
 
 <br>
 
@@ -54,6 +54,10 @@ Agradecimentos a todo os alunos do grupo 2 pelo apoio e persistência de todos o
 
 Para começar a usar o nosso pacote primeiro você tem que ter o [python](https://www.python.org/downloads/) na versão **no mínimo 3.10**. Assim execute o comando abaixo para fazer a instalação do nosso pacote.
 
+```bash
+pip install CB2325NumericaG2
+```
+
 ## Instalação com um ambiente virtual (Recomenddado)
 
 Para rodar seu projeto com um ambiente virtual basta você rodar
@@ -64,9 +68,7 @@ $ source .venv/Scripts/activate
 $ pip install CB2325NumericaG2
 ```
 
-```bash
-pip install CB2325NumericaG2
-```
+
 ### Dependêcias (Desenvolvedor)
 
 Caso você queira atuar como desenvolvedor do projeto, depois de clonar o repositório, 
@@ -77,10 +79,10 @@ pip install -r requirements.txt
 
 ## 📦 Pacotes
 * [pytest](https://github.com/pytest-dev/pytest)  
-* [numpy]()
-* [sympy]()
-* [matplotlib]()
-* [plotly]()
+* [numpy](https://github.com/numpy/numpy)
+* [sympy](https://github.com/sympy/sympy)
+* [matplotlib](https://github.com/matplotlib/matplotlib)
+* [plotly](https://github.com/plotly/plotly.py)
 
 ## 🧪 Testes
 
@@ -97,4 +99,4 @@ Todas as referências vão estar disponíveis no [PyPI](https://pypi.org/project
 
 &copy; Copyright todos os direitos reservados
 
-Distruibuidos pelos termos de licença do [MIT](https://alguma.com) de graça e open source.
+Distruibuidos pelos termos de licença do [Licença MIT](./LICENSE) de graça e open source.

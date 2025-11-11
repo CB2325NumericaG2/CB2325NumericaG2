@@ -1,9 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from ..ajuste_polinomial_min_quadrados.ajuste_polinomial_min_quadrados import (
-    ajuste_polinomial_min_quadrados,
-)
+from .. import ajuste_polinomial_min_quadrados
 
 
 def plot_polinomio_minimos_quadrados(x, y, grau, num_pontos=200):

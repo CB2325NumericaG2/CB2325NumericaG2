@@ -118,9 +118,11 @@ class PolinomioHermite:
         if expressao == sp.Integer(0) and self.grau >= 0:
             return [0.0] * (self.grau + 1)
         
-        x = sp.Symbol('x')
         polinomio_obj = expressao.as_poly()
 
+        if not polinomio_obj and isinstance(expressao, sp.Float):
+            return [float(expressao)]
+        
         coeficientes = polinomio_obj.all_coeffs()
 
         resultado = [float(coeficiente) for coeficiente in coeficientes]

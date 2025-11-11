@@ -1,9 +1,6 @@
 import pytest
 
-from aproximacao.ajuste_polinomial_min_quadrados.ajuste_polinomial_min_quadrados import (
-    ajuste_polinomial_min_quadrados,
-)
-
+from src.aproximacao import ajuste_polinomial_min_quadrados
 
 def test_ajuste_polinomial_min_quadrados_recupera_reta():
     x = [0.0, 1.0, 2.0, 3.0]

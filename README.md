@@ -13,7 +13,7 @@ A `CB2325NumericaG2` foi criada como forma de aprendizado para o trabalho de Pro
 
 Um simples exemplo de uso:
 ```python
-from CB2325NumericaG2.interpolacao import linear 
+from interpolacao import linear 
 
 valor_interpolado = linear(10, 20, 0.5)
 
@@ -30,13 +30,9 @@ print(valor_interpolado) # 15
 - [🔗 Referências](#-referências)
 - [📝 Licença](#-licença)
 
-
-
-
-
 ## 🛠️ Colaboradores
 
-Agradecimentos a todo os aluunos do grupo 2 pelo apoio e persistência de todos os membros da equipe. Não teriámos como ter feito [esse trabalho]() sem eles.
+Agradecimentos a todo os alunos do grupo 2 pelo apoio e persistência de todos os membros da equipe. Não teriámos como ter feito [esse trabalho]() sem eles.
 
 <br>
 
@@ -57,6 +53,16 @@ Agradecimentos a todo os aluunos do grupo 2 pelo apoio e persistência de todos 
 ### Básico:
 
 Para começar a usar o nosso pacote primeiro você tem que ter o [python](https://www.python.org/downloads/) na versão **no mínimo 3.10**. Assim execute o comando abaixo para fazer a instalação do nosso pacote.
+
+## Instalação com um ambiente virtual (Recomenddado)
+
+Para rodar seu projeto com um ambiente virtual basta você rodar
+
+```bash
+$ python -m build venv venv
+$ source .venv/Scripts/activate
+$ pip install CB2325NumericaG2
+```
 
 ```bash
 pip install CB2325NumericaG2

@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from ..theil_sen.theil_sen import theil_sen
+from .. import theil_sen
 
 def plot_linear_theil_sen(x, y):
     """

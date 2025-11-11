@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from ..minimos_quadrados.minimos_quadrados import minimos_quadrados
+from .. import minimos_quadrados
 
 def plot_linear_minimos_quadrados(x, y):
     """

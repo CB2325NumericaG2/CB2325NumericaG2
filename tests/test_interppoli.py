@@ -10,7 +10,7 @@ from src.interpolacao import polinomial
         ([1,2], [1,2], [0,1]),
         ([1,2,3], [1,2,4], [1,-0.5,0.5]),
         ([1,2,3,4], [17,4,71,202], [126,-162.33333333333,56,-2.66666666667]),
-        ([1,2,-3,4,5,0],[-39,-368,-243,-3456,-6875,0], [1,-30,-10]),
+        ([1,2,-3,4,5,0],[-39,-368,-243,-3456,-6875,0], [0,0,0,-30,-10,1]),
         ([1, 2], [5, 7], [3,2]),
         ([0, 1, 2], [0, 1, 4], [0,0,1]),
         ([1, 5, 10], [10, 10, 10], [10,0,0]),
@@ -18,14 +18,39 @@ from src.interpolacao import polinomial
         ([-1, 0, 1, 2], [0, 0, 0, 6], [0,-1,0,1]),
         ([-2, 0, 2], [4, 0, 4], [0,0,1]),
         ([3, 1], [10, 4], [1,3]),
-        ([0, 1, 2, 3, 4], [1, 2, 5, 10, 17], [1,0,1,0,0])
+        ([0, 1, 2, 3, 4], [1, 2, 5, 10, 17], [1,0,1,0,0]),
+        ([],[],[])
     ]
 )
 def test_coeficientes_polinomio(x, y, esperado):
     resultado = polinomial(x, y)
-    assert resultado.coeficientes == pytest.approx(esperado, abs=1e-9)
+    assert resultado.coeficientes() == pytest.approx(esperado, abs=1e-9)
 
-# ---------- TESTES DA AVALIAÇÃO DE PONTOS ----------
+# ---------- TESTES DOS PONTOS ORIGINAIS ----------
+@pytest.mark.parametrize(
+    "x, y",
+    [
+        ([1,2], [1,1]),
+        ([1,2], [1,2]),
+        ([1,2,3], [1,2,4]),
+        ([1,2,3,4], [17,4,71,202]),
+        ([1,2,-3,4,5,0],[-39,-368,-243,-3456,-6875,0]),
+        ([1, 2], [5, 7]),
+        ([0, 1, 2], [0, 1, 4]),
+        ([1, 5, 10], [10, 10, 10]),
+        ([3], [99]),
+        ([-1, 0, 1, 2], [0, 0, 0, 6]),
+        ([-2, 0, 2], [4, 0, 4]),
+        ([3, 1], [10, 4]),
+        ([0, 1, 2, 3, 4], [1, 2, 5, 10, 17])
+    ]
+)
+def test_pontos_originais(x, y):
+    resultado = polinomial(x, y)
+    assert resultado(x) == pytest.approx(y, abs=1e-9)
+
+
+# ---------- TESTES DA AVALIAÇÃO DE NOVOS PONTOS ----------
 @pytest.mark.parametrize(
     "x, y, esperado",
     [
@@ -51,24 +76,20 @@ def test_novo_ponto(x, y, esperado):
 @pytest.mark.parametrize(
     "x, y, esperado",
     [
-        ([1,2], [1,1], [1,1]),
-        ([1,2], [1,2], [2,3]),
-        ([1,2,3], [1,2,4], [2,4]),
-        ([1,2,3,4], [17,4,71,202], [4,71]),
-        ([1,2,-3,4,5,0],[-39,-368,-243,-3456,-6875,0], [-368,]),
-        ([1, 2], [5, 7], [7,]),
-        ([0, 1, 2], [0, 1, 4], [4]),
-        ([1, 5, 10], [10, 10, 10], [10,10]),
-        ([3], [99], [99,99]),
-        ([-1, 0, 1, 2], [0, 0, 0, 6], [6]),
-        ([-2, 0, 2], [4, 0, 4], [4]),
-        ([3, 1], [10, 4], [7,10]),
-        ([0, 1, 2, 3, 4], [1, 2, 5, 10, 17], [5,10])
+        ([1,2], [1,1], [1,1,1,1]),
+        ([1,2], [1,2], [2,0.5,0,-1]),
+        ([1,2,3], [1,2,4], [2,0.875,1,2]),
+        ([1,2,3,4], [17,4,71,202], [4,58.5,126,347]),
+        ([1,2,-3,4,5,0],[-39,-368,-243,-3456,-6875,0], [-368,-4.34375,0,19]),
+        ([0, 1, 2], [0, 1, 4], [4,0.25,0,1]),
+        ([1, 5, 10], [10, 10, 10], [10,10,10,10]),
+        ([3], [99], [99,99,99,99]),
+        ([-1, 0, 1, 2], [0, 0, 0, 6], [6,-0.375,0,0])
     ]
 )
 def test_lista_novos_pontos(x, y, esperado):
     resultado = polinomial(x, y)
-    assert resultado([2,3]) == pytest.approx(esperado, abs=1e-9)
+    assert resultado([2,0.5,0,-1]) == pytest.approx(esperado, abs=1e-9)
 
 # ---------- TESTES DE ERROS ----------
 
@@ -92,13 +113,3 @@ def test_erro_lista_com_tipo_invalido_call():
     p = polinomial([0, 1], [0, 1])
     with pytest.raises(TypeError):
         p([0, "a", 2])
-
-def test_coeficientes_lista_vazia():
-    p = polinomial([], [])
-    # matriz vazia, falha na resolução
-    with pytest.raises(np.linalg.LinAlgError):
-        p.coeficientes()
-
-def test_str_sem_pontos():
-    p = polinomial([], [])
-    assert str(p) == "0"

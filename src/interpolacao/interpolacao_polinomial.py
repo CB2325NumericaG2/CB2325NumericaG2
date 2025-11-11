@@ -89,9 +89,3 @@ class PolinomioInterpolador:
                 resultados.append(self._lagrange(i))
             return resultados
         raise ValueError
-    
-    '''def add(self,x,y):
-        """Atualiza o polinômio interpolador com a adição de pontos"""
-
-    def remove(self,x):
-        """Atualiza o polinômio interpolador com a remoção de pontos"""'''

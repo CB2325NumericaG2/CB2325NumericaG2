@@ -2,7 +2,7 @@ import numpy as np
 from functools import reduce
 from typing import Callable
 
-def integral_trapézio(func:Callable[[float],float], pi:float, pf:float, n:int) -> float:
+def integral_trapezio(func:Callable[[float],float], pi:float, pf:float, n:int) -> float:
     """
     Aplica o método da Regra do Trapézio Composta para encontrar uma aproximação da integral de f(x) 
     no intervalo [pi, pf]. Para isso, o intervalo é dividido em n subintervalos de tamanho igual e em cada 
@@ -45,5 +45,5 @@ def integral_trapézio(func:Callable[[float],float], pi:float, pf:float, n:int) 
 
 if __name__ == "__main__":
     f = lambda x: np.sin(x)**2
-    resultado = integral_trapézio(f, -10, 10, -100)
+    resultado = integral_trapezio(f, -10, 10, -100)
     print(f"Integral aproximada = {resultado}")

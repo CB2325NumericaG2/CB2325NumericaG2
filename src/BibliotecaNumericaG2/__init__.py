@@ -17,9 +17,9 @@ from .erros import (
 )
 
 from .raizes import (
-  metodo_bisseccao,
-  metodo_newton_raphson,
-  metodo_secante
+  bisseccao,
+  newton_raphson,
+  secante
 )
 
 from .integracao import (
@@ -39,9 +39,9 @@ __all__= [
   "ajuste_polinomial_min_quadrados",
   "erro_absoluto",
   "erro_relativo",
-  "metodo_bisseccao",
-  "metodo_secante",
-  "metodo_newton_raphson",
+  "bisseccao",
+  "secante",
+  "newton_raphson",
   "integral_componentes",
   "integral_retangulo",
   "integral_trapezio"

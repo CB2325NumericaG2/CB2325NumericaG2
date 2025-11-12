@@ -1,6 +1,6 @@
 import pytest
 
-from src.interpolacao import linear_partes
+from src.BibliotecaNumericaG2.interpolacao import linear_partes
 
 @pytest.mark.parametrize(
     "x_vals, y_vals, x, esperado",

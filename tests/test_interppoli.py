@@ -1,6 +1,6 @@
 import pytest
 import numpy as np
-from src.interpolacao import polinomial
+from src.BibliotecaNumericaG2.interpolacao import polinomial
 
 # ---------- TESTES DOS COEFICIENTES ----------
 @pytest.mark.parametrize(

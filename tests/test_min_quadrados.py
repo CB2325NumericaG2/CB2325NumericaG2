@@ -1,6 +1,6 @@
 import pytest
 
-from src.aproximacao import minimos_quadrados
+from src.BibliotecaNumericaG2.aproximacao import minimos_quadrados
 
 def test_minimos_quadrados_recupera_reta_simples():
     x = [0.0, 1.0, 2.0, 3.0]

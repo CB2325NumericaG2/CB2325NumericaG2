@@ -1,6 +1,6 @@
 import pytest
 
-from src.aproximacao import theil_sen
+from src.BibliotecaNumericaG2.aproximacao import theil_sen
 
 def test_theil_sen_recupera_reta_simples():
     x = [0.0, 1.0, 2.0, 3.0, 4.0]

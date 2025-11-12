@@ -1,7 +1,7 @@
 from typing import Callable
 
 
-def bissecao(
+def bisseccao(
     f: Callable[[float], float],
     a: float,
     b: float,

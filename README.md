@@ -2,7 +2,7 @@
 
 ![Static Badge](https://img.shields.io/badge/python-3.10-336B9C)
 ![Static Badge](https://img.shields.io/badge/size-4.31%20mb-4687BC)
-![Static Badge](https://img.shields.io/badge/pypi-v.0.0.2-FFD43A)
+![Static Badge](https://img.shields.io/badge/pypi-v.0.0.4-FFD43A)
 ![Static Badge](https://img.shields.io/badge/test-passing-31C754?logo=github)
 
 

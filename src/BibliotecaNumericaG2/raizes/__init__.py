@@ -1,4 +1,4 @@
-from .bissecao import bisseccao
+from .bisseccao import bisseccao
 from .newton_raphson import newton_raphson
 from .secante import secante
 

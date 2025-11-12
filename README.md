@@ -63,7 +63,7 @@ pip install BibliotecaNumericaG2
 Para rodar seu projeto com um ambiente virtual basta você rodar
 
 ```bash
-$ python -m build venv venv
+$ python -m venv venv
 $ source .venv/Scripts/activate
 $ pip install BibliotecaNumericaG2
 ```

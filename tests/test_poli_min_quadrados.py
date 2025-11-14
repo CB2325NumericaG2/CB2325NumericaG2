@@ -1,6 +1,6 @@
 import pytest
 
-from src.BibliotecaNumericaG2.aproximacao import ajuste_polinomial_min_quadrados
+from src.CB2325NumericaG2.aproximacao import ajuste_polinomial_min_quadrados
 
 def test_ajuste_polinomial_min_quadrados_recupera_reta():
     x = [0.0, 1.0, 2.0, 3.0]

@@ -1,7 +1,7 @@
 import pytest
 import math
 
-from src.BibliotecaNumericaG2.raizes import bisseccao, newton_raphson, secante
+from src.CB2325NumericaG2.raizes import bisseccao, newton_raphson, secante
 
 def test_metodo_bisseccao():
     f = lambda x: x**2 - 2

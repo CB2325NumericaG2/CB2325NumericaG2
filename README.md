@@ -7,7 +7,7 @@
 
 
 ## Introdução 
-A `BibliotecaNumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do período 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica contendo 5 módulos que são: integração, raízes de funções, aproximações e erros
+A `BibliotecaNumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do período 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica contendo 5 módulos que são: integração, interpolação, raízes de funções, aproximações e erros
 
 <br>
 

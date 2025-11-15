@@ -2,12 +2,12 @@
 
 ![Static Badge](https://img.shields.io/badge/python-3.10-336B9C)
 ![Static Badge](https://img.shields.io/badge/size-4.31%20mb-4687BC)
-![Static Badge](https://img.shields.io/badge/pypi-v.0.0.2-FFD43A)
+![Static Badge](https://img.shields.io/badge/pypi-v.0.0.4-FFD43A)
 ![Static Badge](https://img.shields.io/badge/test-passing-31C754?logo=github)
 
 
 ## Introdução 
-A `BibliotecaNumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do período 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica contendo 5 módulos que são: integração, raízes de funções, aproximações e erros
+A `CB2325NumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do período 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica contendo 5 módulos que são: integração, interpolação, raízes de funções, aproximações e erros
 
 <br>
 
@@ -55,7 +55,7 @@ Agradecimentos a todo os alunos do grupo 2 pelo apoio e persistência de todos o
 Para começar a usar o nosso pacote primeiro você tem que ter o [python](https://www.python.org/downloads/) na versão **no mínimo 3.10**. Assim execute o comando abaixo para fazer a instalação do nosso pacote.
 
 ```bash
-pip install BibliotecaNumericaG2
+pip install CB2325NumericaG2
 ```
 
 ## Instalação com um ambiente virtual (Recomenddado)
@@ -65,7 +65,7 @@ Para rodar seu projeto com um ambiente virtual basta você rodar
 ```bash
 $ python -m venv venv
 $ source .venv/Scripts/activate
-$ pip install BibliotecaNumericaG2
+$ pip install CB2325NumericaG2
 ```
 
 

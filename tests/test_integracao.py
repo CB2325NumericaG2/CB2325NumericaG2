@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 
-from src.BibliotecaNumericaG2.integracao import integral_trapezio, integral_componentes, integral_retangulo
+from src.CB2325NumericaG2.integracao import integral_trapezio, integral_componentes, integral_retangulo
 
 # ---------- TESTES DE FUNCIONALIDADE ----------
 

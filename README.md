@@ -7,7 +7,7 @@
 
 
 ## Introdução 
-A `CB2325NumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do período 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica contendo 5 módulos que são: integração, interpolação, raízes de funções, aproximações e erros
+A `CB2325NumericaG2` foi criada como forma de aprendizado para o trabalho de Programação 2 do período 1.2 do [IMPA Tech](https://impatech.edu.br/). O objetivo do trabalho era criar uma biblioteca numérica contendo 5 módulos que são: integração, interpolação, raízes de funções, aproximações e erros.
 
 <br>
 
@@ -22,7 +22,7 @@ print(valor_interpolado) # 15
 
 <br>
 
-- 🚩[Introdução](#introdução)
+- [🚩 Introdução](#introdução)
 - [🛠️ Colaboradores](#️-colaboradores)
 - [⌨️ Instalação](#️-instalação)
 - [📦 Pacotes](#-pacotes)
@@ -32,7 +32,7 @@ print(valor_interpolado) # 15
 
 ## 🛠️ Colaboradores
 
-Agradecimentos a todo os alunos do grupo 2 pelo apoio e persistência de todos os membros da equipe. Não teriámos como ter feito [esse trabalho]() sem eles.
+Agradecimentos a todos os alunos do grupo 2 pelo apoio e persistência de todos os membros da equipe. Não teríamos como ter feito esse trabalho sem eles.
 
 <br>
 
@@ -52,27 +52,14 @@ Agradecimentos a todo os alunos do grupo 2 pelo apoio e persistência de todos o
 
 ### Básico:
 
-Para começar a usar o nosso pacote primeiro você tem que ter o [python](https://www.python.org/downloads/) na versão **no mínimo 3.10**. Assim execute o comando abaixo para fazer a instalação do nosso pacote.
+Para começar a usar o nosso pacote primeiro você tem que ter o [python](https://www.python.org/downloads/) na versão **no mínimo 3.10**. Assim execute o comando abaixo para fazer a instalação do nosso pacote:
 
 ```bash
-pip install CB2325NumericaG2
-```
-
-## Instalação com um ambiente virtual (Recomenddado)
-
-Para rodar seu projeto com um ambiente virtual basta você rodar
-
-```bash
-$ python -m venv venv
-$ source .venv/Scripts/activate
 $ pip install CB2325NumericaG2
 ```
 
-
-### Dependêcias (Desenvolvedor)
-
-Caso você queira atuar como desenvolvedor do projeto, depois de clonar o repositório, 
-
+### Dependências (Desenvolvedor)
+Para instalar automaticamente as dependências utilizadas na biblioteca:
 ```bash
 pip install -r requirements.txt
 ```
@@ -86,7 +73,7 @@ pip install -r requirements.txt
 
 ## 🧪 Testes
 
-Primeiro você tem que estar com todas as dependências baixadas, caso você não tenha, você pode buscar na [sessão de instalação](#️-instalação). Executando o comando abaixo você inicializa os [testes automatizados]()
+Primeiro você tem que estar com todas as dependências baixadas, caso você não tenha, você pode buscar na [seção de instalação](#️-instalação). Executando o comando abaixo você inicializa os testes automatizados
 ```bash
   pytest tests/
 ```
@@ -97,6 +84,4 @@ Todas as referências vão estar disponíveis no [PyPI](https://pypi.org/project
 
 ## 📝 Licença
 
-&copy; Copyright todos os direitos reservados
-
-Distruibuidos pelos termos de licença do [Licença MIT](./LICENSE) de graça e open source.
+Este projeto é distribuído sob os termos da [Licença MIT](./LICENSE), de forma gratuita e open source.

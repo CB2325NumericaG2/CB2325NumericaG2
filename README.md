@@ -52,10 +52,8 @@ Agradecimentos a todos os alunos do grupo 2 pelo apoio e persistência de todos 
 
 ### Básico:
 
-Para começar a usar o nosso pacote primeiro você tem que ter o [python](https://www.python.org/downloads/) na versão **no mínimo 3.10**. Assim execute o comando abaixo para fazer a instalação do nosso pacote.
+Para começar a usar o nosso pacote primeiro você tem que ter o [python](https://www.python.org/downloads/) na versão **no mínimo 3.10**. Assim execute o comando abaixo para fazer a instalação do nosso pacote:
 
-## Instalação usando pip
-Para instalação do projeto usando pip:
 ```bash
 $ pip install CB2325NumericaG2
 ```

@@ -80,4 +80,4 @@ Todas as referências vão estar disponíveis no [PyPI](https://pypi.org/project
 
 ## 📝 Licença
 
-Este projeto é distribuído sob os termos da Licença MIT, de forma gratuita e open source.
+Este projeto é distribuído sob os termos da [Licença MIT](./LICENSE), de forma gratuita e open source.
